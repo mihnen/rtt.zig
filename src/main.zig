@@ -67,7 +67,7 @@ export var _SEGGER_RTT: extern struct {
     .max_up_channels = 1,
     .max_down_channels = 0,
     .channel = .{
-        .name = "rtt.zig",
+        .name = "rttzig",
         .buf = &BUF,
         .bufsz = BUF_LEN,
         .write = 0,
@@ -125,12 +125,12 @@ const Writer = struct {
         }
     }
 
-    pub fn writeByteNTimes(
+    pub fn writeBytesNTimes(
         self: Writer,
-        byte: u8,
+        bytes: []const u8,
         n: usize,
     ) Writer.Error!void {
-        for (0..n) |_| self.writeAll(&[_]u8{byte}) catch unreachable;
+        for (0..n) |_| self.writeAll(bytes) catch unreachable;
     }
 };
 
