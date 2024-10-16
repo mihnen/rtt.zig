@@ -62,7 +62,7 @@ export var _SEGGER_RTT: extern struct {
     channel: Channel,
 } = .{
     .magic = [_]u8{
-        '_', 'S', 'E', 'G', 'G', 'E', 'R', '_', 'R', 'T', 'T', 0, 0, 0, 0, 0,
+        'S', 'E', 'G', 'G', 'E', 'R', ' ', 'R', 'T', 'T', 0, 0, 0, 0, 0, 0,
     },
     .max_up_channels = 1,
     .max_down_channels = 0,

@@ -5,6 +5,6 @@ pub fn build(b: *std.Build) !void {
     _ = b.standardOptimizeOption(.{});
 
     _ = b.addModule("rtt", .{
-        .source_file = .{ .path = "rtt.zig" },
+        .root_source_file = b.path("src/rtt.zig"),
     });
 }
